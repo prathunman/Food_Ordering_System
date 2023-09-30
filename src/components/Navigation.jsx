@@ -1,8 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from '../components/Header';
-import {Home, Login, Register, Cart, Menu, PaymentSuccess} from '../pages'
-
+import Header from './Header';
+// import {Home, Login, Register, Cart, Menu, PaymentSuccess} from '../pages'
+import Home from '../pages/Home';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
+import Cart from '../pages/Cart';
+import Menu from '../pages/Menu';
+import PaymentSuccess from '../pages/Menu';
 function Navigation() {
   return (
     <BrowserRouter>
@@ -19,4 +24,4 @@ function Navigation() {
   )
 }
 
-export default Navi
+export default Navigation
