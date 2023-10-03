@@ -13,12 +13,12 @@ function Banner() {
             </p>
             <div className='btn-container'>
                 <Button>Order Now</Button>
-                <a href='/menu' className='text-yellow-400 hover:text-yellow-500 font-bold text-decoration-line'>
+                <a href='/menu' className='text-yellow-400 hover:text-yellow-500 font-bold text-decoration-line p-3'>
                     See Menu
                 </a>
             </div>
         </div>
-        <div className='banner-image w-full md:w-1/2 p-3 flex justify-start'>
+        <div className='banner-image w-full md:w-1/2 p-3 flex justify-end'>
             <img src={require("../assets/images/pizza_banner.png")} alt="banner" className='max-h-95'/>
         </div>
     </div>

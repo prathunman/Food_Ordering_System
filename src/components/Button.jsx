@@ -19,10 +19,10 @@ const variants = {
     dark: 'bg-black focus:ring-white'
 };
 
-function Button({childern,className,size='small',variant='primary',...rest}) {
+function Button({children,className,size='small',variant='primary',...rest}) {
   return (
     <button className={clsx(sizes[size], variants[variant], getClassName({className}))}{...rest}>
-        {childern}
+        {children}
     </button>
   )
 }
