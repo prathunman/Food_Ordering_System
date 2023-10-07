@@ -10,19 +10,20 @@ async function main(){
         await client.connect();
         const productsCollection = client.db('Food_Order_System').collection('Products');
         const categoriesCollection = client.db('Food_Order_System').collection('Categories');
-
-        let categories = ['breackfast','lunch','dinner'].map((category)=>{
+        productsCollection.drop();
+        categoriesCollection.drop();
+        let categories = ['breackfast','lunch','dinner','drinks'].map((category)=>{
             return {name : category}
         });
         await categoriesCollection.insertMany(categories);
         let products = [];
-        for(let i=0; i<10; i++){
+        for(let i=0; i<10; i+=1){
             let newProduct = {
                 name: faker.commerce.productName(),
                 adjective: faker.commerce.productAdjective(),
                 description:faker.commerce.productDescription(),
                 price: faker.commerce.price(),
-                category:_.sample[categories],   
+                category:_.sample(categories)   
             };
             products.push(newProduct);
         }

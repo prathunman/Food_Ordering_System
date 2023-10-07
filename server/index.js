@@ -3,8 +3,8 @@ const bodyParse = require("body-parser");
 const cors = require("cors");
 
 const db = require('./db');
-
 const app = express();
+const productRouter=require('./routes/projectRouter');
 
 var corsOption = {
     origin: "http://localhost:3000"
@@ -24,3 +24,4 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`);
 })
+app.use('/api/',productRouter);
