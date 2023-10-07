@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongo_url = "mongodb+srv://prathi:123123123@cluster0.uwnedvf.mongodb.net/?retryWrites=true&w=majority";
+mongo_url = "mongodb://localhost:27017";
 mongoose.connect(mongo_url,{useNewUrlParser: true}).catch(e=>{
     console.log('Connection error', e.message)
 })
