@@ -1,6 +1,6 @@
-const dbName = 'Food_Order_System';
-const dbHost='Localhost';
+const dbName = 'food-ordering';
+const dbHost = 'localhost';
 const dbPort = 27017;
-module.exports={
-    url:`mongodb://${dbHost}/${dbName}`
+module.exports = {
+    url: `mongodb://${dbHost}:${dbPort}/${dbName}`
 }
