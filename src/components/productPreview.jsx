@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import ProductReviewCard from './ProductReviewCard';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { useDispatch } from 'react-redux';
+import { addTocart } from '../stores/cart/cartSlice';
 
 
 function ProductPreview() {
     const [products,setProducts] = useState([]);
+    const dispatch = useDispatch();
     useEffect(()=>{
         fetch('http://localhost:8080/api/products')
         .then(response=>response.json())
@@ -32,15 +35,19 @@ function ProductPreview() {
           items: 1
         }
       };
+
+      const onAddProduct = (product) =>{
+        dispatch(addTocart(product))
+      }
   return (
-    <div className='container mx-auto pb-4 w-2/3'>
+    <div className='container mx-auto pb-4 w-full'>
         <h2>Products</h2>
         <Carousel responsive={responsive}>
         {
             products.length>0 && products.map((product,index)=>{
                 return(
                     <div className='w-full p-3'>
-                        <ProductReviewCard key={index} product={product} />
+                        <ProductReviewCard key={index} product={product} onAddProduct={onAddProduct}/>
                     </div>
                 )
             })
