@@ -2,11 +2,13 @@ import React from 'react'
 
 import { combineReducers } from 'redux';
 import cartReducer from './cart/cartSlice'
-import productSlice from './menu/productSlice';
+import productReducer from './menu/productSlice';
 
 
 const rootReducer = combineReducers(
-    {cart:cartReducer,
-    products:productSlice}
+    {
+        cart:cartReducer,
+        products:productReducer,
+    }
 )
 export default rootReducer; 
